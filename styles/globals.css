@@ -1,0 +1,115 @@
+  *::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .fondoFoto{
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .menos70{
+    transform: translateY(-70px);
+  }
+  
+  .sinBarraDeScrool::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .centradoColumn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .centradoPorBetween{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .centradoPorDefecto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .HoverGenerico:hover{
+    opacity: 80%;
+    cursor: pointer;
+  }
+  
+  .TemaOscuro{
+    background-color: black;
+    color: white;
+  }
+  
+  .TemaClaro{
+    background-color: white;
+    color: black;
+  }
+  
+  .oneHundredPC{
+    height: 100%;
+    width: 100%;
+  }
+  
+  .oneHundred{
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  .fifty{
+    height: 50%;
+    width: 50%;
+  }
+  
+  .oneHundredEighty{
+    height: 80%;
+    width: 100%;
+  }
+  
+  .twenty{
+    height: 20%;
+    width: 100%;
+  }
+  
+  .oneHundredSeventy{
+    height: 70%;
+    width: 100%;
+  }
+  
+  .thirty{
+    height: 30%;
+    width: 100%;
+  }
+  
+  .btn-regreso{
+    padding: 30px;
+    text-decoration: none;
+    border-radius: 50%;
+  }
+  
+  .btn-regreso:hover{
+    padding: 50px;
+    box-shadow: black 0.1em 0.1em 0.5em;
+  }
+
+  .InputNombre{
+    width: 100%;
+    background-color: aliceblue;
+    color: black;
+    height: 8%;
+  }
+  
+  .TextTareaText{
+    width: 100%;
+    background-color: aliceblue;
+    color: black;
+    height: 70%;
+  }
+  
+  .middles{
+    height: 100%;
+    width: 50%;
+  }

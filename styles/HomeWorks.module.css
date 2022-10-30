@@ -1,0 +1,429 @@
+@media (max-width: 768px) {
+    /* juego */
+    .salidaLink{
+        width: 50vw !important;
+    }
+
+    .botonesRespuesta{
+        width:35vw !important;
+        font-size: 20px;
+    }
+
+    .BoxRespuesta{
+        height: 350px !important;
+        margin:5%;
+        width:80% !important;
+    }
+
+    .CentroJuego{
+        margin-top: 10%;
+        margin-bottom: 10%;
+        width: 100vw !important;
+        height:550px !important;
+    }
+
+    .barrasDePalabras{
+        justify-content: center;
+        display: flex;
+        height: auto;
+        width: 100vw;
+    }
+
+    .containCenter{
+        height: auto;
+        flex-direction: column;
+    }
+
+    .RespuestaCorreta{
+        transform: translateY(-80vh) !important;
+        width:85vw !important;
+    }
+
+    .tablero{
+        width:90vw !important;
+        height: 120px !important;
+    }
+    .btnFinalDePartida{
+        height: 100% !important;
+    }
+    .ContentBtnFinal{
+        width:90vw !important;
+        height: 6vh;
+    }
+
+
+    /* main */
+    .chebox{
+        margin: 1vh !important;
+    }
+    .formularioPalabras{
+        padding: 2vh !important;
+        font-size: 20px;
+    }
+    .IdLista{
+        margin: 3px;
+        border:solid 1px white !important;
+    }
+    .lateralInf{
+        height: 50% !important;
+    }
+    .LateralSup{
+        height: 50% !important;
+    }
+    .TituloDeTemas{
+        height:30%;
+        font-size: 25px;
+        border:none !important;
+    }
+    .lateral{
+        width:100% !important;
+        height: 700px !important;
+    }
+    .BoxMainJuego{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+    .centro{
+        height: 700px;
+        margin-top: 120px;   
+    }
+    .boxPedido{
+        height: 40%;
+        margin-top: 2.1%;
+    }
+
+    .temas{
+        height: 70px;
+    }
+    .boxTituloPedido{
+        border-bottom:none !important;
+    }
+
+    .MovCentrado{
+        animation-duration: 5s;
+        animation-name: movimientoCentro2;
+        animation-fill-mode: forwards;
+    }
+
+    .ConteinerPalabrasExterno{
+        border:none !important;
+        width:100vw !important;
+        height: 95vh;
+    }
+    
+    .ConteinerPalabras{
+        width:100% !important;
+    }
+
+    .btnLateral{
+        display: none !important;
+    }
+}
+
+.btnLateral{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width:30px;
+    margin:10px;
+}
+
+.salidaLink{
+    width:50%;
+}
+
+.ConteinerPalabrasExterno{
+    border-left:solid 1px white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width:30vw;
+    height: 100vh;
+    background-color: rgb(75 , 75 ,75);
+}
+
+.ConteinerPalabras{
+    display: flex;
+    justify-content: space-between;
+    width:30vw;
+    height: 90%;
+}
+
+.boxBtnPedido{
+    height: 10%;
+}
+
+.BoxMainJuego{
+    display: flex;
+    overflow-x:hidden;
+}
+
+.lateral::-webkit-scrollbar{
+    display: none;
+}
+
+.lateral{
+    width:20%;
+    height: 100vh;
+}
+
+.tituloLateral{
+    font:20px;
+    height: 10%;
+    width:100%;
+    border-bottom:solid 1px rgb(255, 255, 255);
+}
+
+.subTituloLateral{
+    border:solid 1px white;
+    font:12.5px;
+    width:95%;
+    background-color: rgb(35 , 35 ,35);
+}
+
+.LateralSup{
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    list-style: none;
+    padding:0px;
+    height: 35%;
+}
+
+.lateralInf{
+    height: 50%;
+}
+
+.IdLista{
+    width: 95%;
+    height: 35px;
+    border-bottom: solid white 1px;
+    border-right: 1px solid rgb(255, 255, 255);
+    border-left: 1px solid rgb(255, 255, 255);
+    background-color: rgb(30 , 30 ,30);
+}
+
+.formularioPalabras{
+    margin: 0px 10px 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right:solid 1px white;
+    border-left:solid 1px white;
+    border-bottom:solid 1px white;
+    background-color: rgb(30 , 30 ,30);
+    width:95%;
+}
+
+.formularioCantidad{
+    margin: 10px;
+    border:solid 1px white;
+}
+
+.lateralIzqJuego{
+    height: 100%;
+    width: 60%;
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+}
+
+.lateralDerJuego{
+    height: 100%;
+    width: 40%;
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+}
+
+.TituloDeTemas{
+    height:10%;
+    border-bottom:solid 1px white;
+    width:100%;
+}
+
+.boxTituloPedido{
+    border-bottom:solid 1px white;
+    height: 10%;
+    font-size: 30px; 
+}
+
+.boxPedido{
+    height: 50%;
+    margin-top: 2.1%;
+}
+
+.temas{
+    background-color: rgb(30 , 30 ,30);
+    margin: 10px;
+    border: solid rgb(255, 255, 255) 1px;
+}
+
+.TituloTemas{
+    height: 30%;
+    width:100%;
+    border-bottom:solid 1px white; 
+}
+
+.BoxTemas{
+    height: 70%;
+    width:100%;
+}
+
+.TablaDePalabras{
+    background-color: rgb(40 , 40 ,40);
+    text-align: center;
+    width:90%;
+    border:solid 1px white;
+    border-radius: 5px;
+    overflow-y: auto;
+    height: 80%;
+}
+
+.palabraJuego{
+    margin:20px 20px 10px 20px;
+    font-size: 40px;
+    color:white;
+}
+
+
+.salida{
+    height: 10%;
+    width:100%;
+}
+
+.ProximaPala{
+    height: 10%;
+    width: 100%;
+}
+
+.CentroJuego{
+    width: 100vw;
+    height:100vh;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    color:rgb(60 , 60 ,60);
+}
+
+.tablero{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-top: 2%;
+    width:90%;
+    height: 15vh;
+    color:white;
+    border-bottom:solid white 1px;
+    background-color: rgb(40 , 40 ,40);
+}
+
+.BoxRespuesta{
+    margin-top: 10vh;
+    height: 40vh;
+    background-color: rgb(40 , 40 ,40);
+    width:40vw;
+    border:solid white 1px;
+    border-radius: 10px;
+}
+
+.BoxTitle{
+    height: 100%;
+    width: 25%;
+}
+
+.ContentBtnFinal{
+    width: 90%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.btnFinalDePartida{
+    width:50%;
+    height:30px;
+    background-color: rgb(100 , 100 ,100);
+}
+
+.RespFinal{
+    margin-top:2.5px;
+    margin-left:auto;
+    margin-right:auto;
+    list-style: none;
+    width:95%;
+    border-radius: 10px;
+    color:white;
+}
+
+.Resp{
+    margin:5px;
+    list-style: none;
+    width:90%;
+    border:solid 1px white;
+}
+
+.btnFinalDePartida:hover{
+    background-color: rgb(22, 6, 6);
+}
+
+.btnSalidaEror{
+    background-color:rgb(191, 0, 0); 
+    border-top-left-radius:15px;
+    border-bottom-right-radius:10px
+}
+
+@media (min-width: 767px) {
+    .MovCentrado{
+        animation-duration: 5s;
+        animation-name: movimientoCentro1;
+        animation-fill-mode: forwards;
+    }
+}
+
+
+@keyframes movimientoCentro1{
+    100%{
+        transform: translate(50% , 15vh);  
+        width:50%;
+        color:rgb(255, 255, 255);
+    }
+}
+
+@keyframes movimientoCentro2{
+    100%{
+        transform: translateY(15vh);  
+        width:50%;
+        color:rgb(255, 255, 255);
+    }
+}
+
+.RespuestaCorreta{
+    transform: translateY(-75vh);
+    z-index: 50;
+    border-radius:15px;
+    width:35vw;
+    height:35vh;
+    border:solid white 1px;
+    background-color: rgb(20, 20, 20);
+}
+
+.btnRespuestas{
+    width:50vw;
+}
+
+.containCenter{
+    z-index: 20;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.BarrasLaterales{
+    width: 50%;
+    height:100%;
+}
+
+.botonesRespuesta{
+    width: 13vw;
+}

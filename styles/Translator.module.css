@@ -1,0 +1,88 @@
+@media  (max-width: 768px) { 
+    .boxTranslator{
+        width:90vw !important;
+        height: 450px !important;
+        flex-direction: column;
+    }
+    .Textarea{
+        margin: 10px 0px 10px 0px !important;
+        width: 90% !important;
+        height: 50% !important;
+    }
+    .Titulo{
+        width: 100% !important;
+    }
+    .boxTitulo{
+        width: 90vw;
+        flex-direction: column;
+        height: 150px;
+    }
+    .Formulario{
+        width:100px !important;
+        height: 30px !important;
+        margin-top:25px;
+        margin-bottom:15px;
+    }
+    .InputSelecIdeo{
+        height: 100% !important;
+        width: 50% !important;
+        margin:0px;
+    }
+    .Agregado{
+        width:0% !important;
+    }
+}
+
+.InputSelecIdeo{
+    border: solid 1px black;
+    height: 30px;
+    width: 20%;
+    margin:10px 0px 10px 0px;
+}
+
+.Formulario{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content:end;
+    align-items: end;
+}
+
+.Titulo{
+    background-color:rgb(105 105 105);
+    border:solid 1px rgb(125 125 125);
+    border-radius: 10px;
+    text-align: center;
+    color:white;
+    font-size:50px;
+    width:50%;
+    margin-bottom:15px;
+}
+
+.boxTitulo{
+    height: auto;
+    display: flex;
+    align-items: center;
+    width: 70vw;
+}
+
+.Textarea{
+    height:90%;
+    width:45%;
+    border-radius: 5px;
+}
+
+.boxTranslator{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(55 , 55 , 55);
+    height: 70vh;
+    width: 70vw;
+    border:solid 1px white;
+    border-radius: 10px;
+}
+
+.Agregado{
+    width:25%;
+}

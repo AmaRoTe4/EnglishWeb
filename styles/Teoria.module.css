@@ -1,0 +1,153 @@
+@media (max-width: 768px) {
+    .BoxTeoria{
+        width:90% !important;
+    }
+    .temas{
+        width:90% !important;
+        margin: 2% !important;
+    }
+    .boxDeTemas{
+        border-left:none !important;
+        border-right:none !important;
+        border-radius: 0px !important;
+    }
+    .Pilar{
+        width: 90% !important;
+    }
+}
+
+.boxMain::-webkit-scrollbar{
+    display: none;
+}
+
+.boxMain{
+    min-height: 100vh;
+    height: auto;
+    background-color:rgb(55, 55, 55)
+}
+
+.temas{
+    background-color:rgb(95, 95, 95);
+    border:solid 1px white;
+    width:22.5%;
+    margin:1.25%;
+    height: 150px;
+    font-size: 25px;
+    color:white;
+}
+
+.titulo{
+    height: 45px;
+    margin:none;
+}
+
+.textTitulo{
+    font-size: 50px;
+    color:white;
+    text-shadow: black 5px 5px 2px;
+}
+
+.boxDeTemas{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    max-height: 250px;
+    background-color:rgb(75, 75, 75);
+    border-radius: 10px;
+    overflow-y: auto;
+}
+
+.TemasEncapsulados{
+    width: 90%;
+    max-height: 60px;
+    background-color:rgb(75, 75, 75);
+    border-radius: 10px;
+    overflow:hidden;
+} 
+
+
+.contentGeneral{
+    height: auto;
+}
+
+.Contain{
+    background-color: rgb(55, 55, 55);
+}
+
+.boxPalabras{
+    background-color: rgb(75, 75, 75);
+    height: 90vh;
+    width: 90vw;
+    border:solid 1px white;
+    margin:auto;
+    border-radius: 10px;
+}
+
+.boxInterSupPalabras{
+    height: 10%;
+    border-bottom: 1px white solid;
+    color:white;
+}
+
+.boxInterInfPalabras{
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.Pilar{
+    margin-top:2.5%;
+    margin-bottom:2.5%;
+    margin-left:1%;
+    margin-right:1%;
+    width: 30%;
+}
+
+.UlList{
+    background-color: rgb(95, 95, 95);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom:solid 1px white;
+    min-height: 35px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.LiList{
+    text-align: center;
+    height:100%;
+    width:100%;
+    color:white;
+    list-style: none;
+}
+
+.TitleList{
+    height: 35px;
+    background-color:rgb(55 55 55);
+}
+
+.ContainConText{
+    background-color: rgb(55, 55, 55);
+    min-height: 100vh;
+}
+
+.BoxTeoria{
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 8px;
+    margin-bottom: 50px;
+    width: 40vw;
+    border:solid 1px white;
+    background-color:rgb(75 75 75);
+}
+
+.TextTeoria{
+    text-align: justify;
+    font-size: 20px;
+    color:white;
+    margin:15px;
+}
