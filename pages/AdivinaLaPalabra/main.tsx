@@ -1,6 +1,6 @@
 import styles from '../../styles/HomeWorks.module.css'
 import { useEffect, useState } from 'react'
-import { FormDePalabras } from './Components/main/Inputs'
+import { FormDePalabrasAPd  , FormDePalabrasEspIng , FormDePalabrasTodos} from './Components/main/Inputs'
 //import Link from 'next/link'
 import { setJuego } from '../../store/slice/juegos/juego'
 import { useDispatch } from 'react-redux'
@@ -9,21 +9,20 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 
 export default function Main(){
-  const ancho:number = process.browser ? window.screen.width : 1000;
   const router = useRouter()
   const dispatch = useDispatch();
   //el primero es todos/cantidad el segundo es Pordefecto/aleatorio
   const [valores , setValores] = useState<boolean[]>([true , true  ,true])
   const [tema, setTemas] = useState<string>('Cosas')
-  const [cantidadDePalabras, setCantidadDePalabras] = useState<number>(147)
+  const [cantidadDePalabras, setCantidadDePalabras] = useState<number>(0)
   const numeracion:string[] = [
-    'Acciones' , //310 español-ingles acciones.txt
-    'Adjetivos' , //194 español-ingles  adjetivos.txt
-    'Cosas' , //572 español-ingles cosas.txt
-    'Familia' , //36 español-ingles familia.txt
-    'Informatica' , //160 ingles-español ingles.txt
+    'Acciones' , 
+    'Adjetivos' , 
+    'Cosas' , 
+    'Familia' , 
+    'Informatica' , 
     'Numeros',
-    'Fechas', //88 español-ingles numeroyfechas.txt'
+    'Fechas', 
   ] 
 
   useEffect(() => {
@@ -69,25 +68,6 @@ export default function Main(){
     }
   }
 
-  const InputCantidad = ():JSX.Element => {
-    return (
-      <>
-      {!valores[0] && <input type='number' value={cantidadDePalabras}  
-            style={{border: 'none' , width: '50px' , marginLeft:'5px'}} 
-            onChange={e => {setCantidadDePalabras(parseInt(e.target.value))}}
-            min={0}
-            max={tema === 'Acciones' ? 155 : 
-            tema === 'Adjetivos' ? 97 : 
-            tema === 'Cosas' ? 286 :
-            tema === 'Familia' ? 18 : 
-            tema === 'Informatica' ? 80 :
-            tema === 'Numeros' ? 58 :
-            tema === 'Fechas' ? 44 : 0 
-          }/>}
-      </>
-    )
-  }
-
   return (
     <div className={`${styles.BoxMainJuego} oneHundred`}
       style={{ 
@@ -113,27 +93,31 @@ export default function Main(){
             ))}
           </ul>
           <div className={`${styles.lateralInf} d-flex flex-column align-items-center justify-content-end `}>
-            <div className={`${styles.subTituloLateral} centradoPorDefecto`}>Salida De Palabras</div>
-            <FormDePalabras
-              textos={['Por Defecto' , 'Aleatorio']}  
-              elemento={undefined}
+            <div className={`${styles.subTituloLateral} centradoPorDefecto`}>
+              Salida De Palabras
+            </div>
+            <FormDePalabrasAPd  
               valores={valores} 
-              setValores={setValores}/>
-            <div className={`${styles.subTituloLateral} centradoPorDefecto`}>Idioma De Validacion</div>
-            <FormDePalabras
-              textos={['Español - Ingles' , 'Ingles - Español']} 
-              elemento={undefined}
+              setValores={setValores}
+            />
+            <div className={`${styles.subTituloLateral} centradoPorDefecto`}>
+              Idioma De Validacion
+            </div>
+            <FormDePalabrasEspIng
               valores={valores} 
-              setValores={setValores}/>
-            <div className={`${styles.subTituloLateral} centradoPorDefecto`}>Cantidad De Palabras</div>
-            <FormDePalabras
-              textos={['Todos' , 'Cantidad']} 
-              elemento={InputCantidad()} 
+              setValores={setValores}
+            />
+            <div className={`${styles.subTituloLateral} centradoPorDefecto`}>
+              Cantidad De Palabras
+            </div>
+            <FormDePalabrasTodos
+              setCantidadDePalabras={setCantidadDePalabras}
+              cantidadDePalabras={cantidadDePalabras}  
               valores={valores} 
               setValores={setValores}/>
           </div>
       </div>
-      <div className={`${styles.centro} ${ancho > 768 ? 'oneHundredPC' : ""}`}>
+      <div className={`${styles.centro} oneHundredPC }`}>
         <div className={`${styles.boxTituloPedido} centradoPorDefecto`}>
             Pedido De Palabras
         </div>

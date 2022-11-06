@@ -1,8 +1,8 @@
-import styles from '../../styles/Teoria.module.css'
+import styles from '../../../styles/Teoria.module.css'
 import { CuadroDeTeoria } from './CuadroDeTeoria'
 //import PresenteSimple from '../../Data/Teoria/PresenteSimple.json'
-import { useEffect, useState } from 'react';
-import Link from 'next/link'
+//import { useEffect, useState } from 'react';
+//import Link from 'next/link'
 
 //presente simple
 //presente continuo

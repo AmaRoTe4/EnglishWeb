@@ -91,9 +91,9 @@ export default function Main(){
               <h2 className='col-12 p-2 centradoColumn HoverGenerico border-light border-bottom'
               onClick={e => {e.preventDefault() ; dispatch( setTheory(0))}} style={{color:"white"}}>
                 {i === 0 ? 'A1' : 
-                 i === 1 ? 'A2' : 
-                 i === 2 ? 'B1' : 
-                 i === 3 ? 'B2' : ''}
+                  i === 1 ? 'A2' : 
+                  i === 2 ? 'B1' : 
+                  i === 3 ? 'B2' : ''}
               </h2>
               {/* aca esta el condicional de los temas */}
               {i === 0 && n.map((m , y) => 
@@ -108,9 +108,9 @@ export default function Main(){
             onClick={e => {e.preventDefault() ;dispatch(  setTheory(i+1))}} style={{color:"white"}}>
             <h2 className='col-12 text-center mt-2'>
               {i === 0 ? 'A1' : 
-               i === 1 ? 'A2' : 
-               i === 2 ? 'B1' : 
-               i === 3 ? 'B2' : ''}
+                i === 1 ? 'A2' : 
+                i === 2 ? 'B1' : 
+                i === 3 ? 'B2' : ''}
             </h2>
           </div>
           )

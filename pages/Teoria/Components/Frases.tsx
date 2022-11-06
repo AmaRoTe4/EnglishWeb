@@ -1,4 +1,4 @@
-import styles from '../../styles/Teoria.module.css'
+import styles from '../../../styles/Teoria.module.css'
 import FrasesComunes from '../../../Data/Teoria/FrasesComunes.json'
 
 interface Props{

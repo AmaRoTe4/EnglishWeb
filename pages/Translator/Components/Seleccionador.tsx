@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from 'react';
-import styles from '../../styles/Translator.module.css'
+import styles from '../../../styles/Translator.module.css'
 
 interface Props{
     seleccionado:number,

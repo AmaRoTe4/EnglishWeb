@@ -1,12 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
-import Juego from './slice/juegos/juego' 
-//import GeneralData from './slice/generalData/generalData' 
+import Juego from './slice/juegos/juego'  
 import Selecciones from './slice/selecciones/selecciones' 
 
 export const store = configureStore({
   reducer: {
     juego: Juego,
-    //generalData:GeneralData,
     selecciones:Selecciones
   },
 })

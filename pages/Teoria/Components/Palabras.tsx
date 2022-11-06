@@ -1,4 +1,4 @@
-import styles from '../../styles/Teoria.module.css'
+import styles from '../../../styles/Teoria.module.css'
 import Abecedario from '../../../Data/Teoria/Abcedario.json'
 import PalabrasMasComunes from '../../../Data/Teoria/PalabrasMasComunes.json'
 import Numeros from '../../../Data/Teoria/Numeros.json'
@@ -35,7 +35,6 @@ export function Palabras({id}:Props):JSX.Element{
     //id === 'La familia' ? Familia : 
     //id === 'Las profesiones' ? Profesiones : 
     //id === 'Los pronombres personales' ? Pronombres : Pronombres 
-
 
     const [data , setData] = useState<CuerpoPalabras[][]>([[]])
 

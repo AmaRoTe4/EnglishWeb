@@ -1,23 +1,16 @@
-import { useEffect, useState } from 'react';
 import styles from '../../styles/HomeWorks.module.css'
-import { RootState } from '../../store/store'
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux'
-import { useRouter } from 'next/router'
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { RootState } from '../../store/store'
 import { BarrasLaterales } from './Components/juego/BarrasLaterales'
 import { Tablero } from './Components/juego/Tablero'
 import { BarraFinal } from './Components/juego/BarraDesFinal'
 import { NubeDeResultado } from './Components/juego/NubeDeResultado'
 import { Palabras } from '../../interfaces'
-//esto son los json de data
-import Acciones from '../../Data/Juego/Acciones.json'
-import Adjetivos from '../../Data/Juego/Adjetivos.json'
-import Cosas from '../../Data/Juego/Cosas.json'
-import Familia from '../../Data/Teoria/Familia.json'
-import Fechas from '../../Data/Juego/Fechas.json'
-import Informatica from '../../Data/Juego/Informatica.json'
-import Numeros from '../../Data/Teoria/Numeros.json'
-import {CuerpoPalabras} from '../../interfaces'
-import Link from 'next/link';
+import IniciarPartida from './functions/juego/iniciarPartida'
+import {ComprobarEsp , ComprobarIng} from './functions/juego/comprobar'
 
 const PorDefecto:Palabras = 
 {
@@ -29,7 +22,7 @@ const PorDefecto:Palabras =
 }
 
 export default function Juego():JSX.Element{
-    const router = useRouter()
+    const router = useRouter();
     const { partida } = useSelector((state:RootState) => state.juego) 
     const [respuesta , setRespuesta] = useState<string>('')
     const [palabras , setPalabras] = useState<Palabras[]>([]);
@@ -40,114 +33,41 @@ export default function Juego():JSX.Element{
     const [barraLateral  , setBarraLateral] = useState<number>(0);
 
     useEffect(()=> {
-        iniciarPartida();
+        setPalabras([])
+        palabras.length === 0 
+        ? setPalabras(IniciarPartida(partida)) 
+        : router.push('/AdivinaLaPalabra/main')
     },[])
 
-    const iniciarPartida = ():void => {
-        setPalabras([]);
+    const funcionPalabra = () => {
+        const resp = partida.OrdernDeIdioma 
+        ? ComprobarEsp(palabras , respuesta)
+        : ComprobarIng(palabras , respuesta)
 
-        const response:CuerpoPalabras[] = 
-        partida.Tema === 'Cosas' ? Cosas :
-        partida.Tema === 'Acciones' ? Acciones :
-        partida.Tema === 'Adjetivos' ? Adjetivos :
-        partida.Tema === 'Familia' ? Familia :
-        partida.Tema === 'Fechas' ? Fechas :
-        partida.Tema === 'Informatica' ? Informatica :
-        partida.Tema === 'Numeros' ? Numeros : Cosas
+        let modPalabra:Palabras | undefined = palabras.shift();
 
-        if(palabras.length === 0){
+        if(resp && modPalabra !== undefined) modPalabra.estado = 1;
+        if(modPalabra !== undefined){
+            modPalabra.respuesta = respuesta;
+            setResultadoPalabras([modPalabra , ...resultadoPalabras]);
+        }
 
-            if(partida.Tema === '') router.push('/AdivinaLaPalabra/main')
-            
-            let aux:number[] = []
-            let todos:number[] = [];
-
-            response.map((n , i) => {
-                todos.push(i);
-            })
-
-            if(!partida.Salida){
-                //aleatorio
-                for(let i = 0; i < partida.Cantidad ; i++){
-                    let random = Math.floor(Math.random()*todos.length);
-                    aux.push(todos[random]);
-                    todos = todos.filter((n , i) => i !== random);
-                }
-            }
-            else if(partida.Salida){
-                //comun
-                for(let i = 0; i < partida.Cantidad ; i++){
-                    aux.push(todos[i]);
-                }
-            }
-
-            let auxPalabras:Palabras[] = []
-            for(let i = 0 ; i < aux.length ; i++){
-                auxPalabras.push(
-                    {
-                        id: i+1,
-                        palabraEnEspañol: SacarPalabras(response[aux[i]].es),
-                        palabraEnIngles: SacarPalabras(response[aux[i]].en),
-                        estado: 0,
-                        respuesta: '',
-                    }
-                )
-            }
-
-            setPalabras(auxPalabras);
+        setRespuesta("");
+        
+        if(resp){
+            setContadores(n => [n[0] + 1 ,n[1] , n[2]+1 , n[3]+100])
+        }else{
+            setContadores(n => [n[0] + 1 ,n[1]+1 , n[2] , n[3] === 0 ? n[3]: n[3] - 25 ])
         }
     }
 
     const Reiniciar = ():void => {
         setContadores([0,0,0,0])
-        setResultadoPalabras([
-            {
-                'id': 1000,
-                'palabraEnIngles': [''],
-                'palabraEnEspañol': [''],
-                'estado':2,
-                'respuesta':'respondido',
-            }
-        ])
-        iniciarPartida()
-    }
-
-    const SacarPalabras = (pala:string):string[] =>{
-        return pala ? pala.split('/') : [''];
-    } 
-
-    const comprobar = ():void => {
-        let resp:boolean = false;
-        
-        if(!partida.OrdernDeIdioma){
-            for(let i:number = 0; i < palabras[0].palabraEnEspañol.length; i++){
-                respuesta.toLowerCase() === palabras[0].palabraEnEspañol[i].toLowerCase() 
-                ? resp = true : ''
-            }
-        }else{
-            for(let i:number = 0; i < palabras[0].palabraEnIngles.length; i++){
-                respuesta.toLowerCase() === palabras[0].palabraEnIngles[i].toLowerCase() 
-                ? resp = true : ''
-            }
-        }
-
-        let aux:Palabras[] = palabras;
-        let modPalabra:Palabras | undefined = aux.shift();
-
-        if(resp && modPalabra !== undefined) modPalabra.estado = 1;
-
-        if(modPalabra !== undefined) {
-            modPalabra.respuesta = respuesta === '' ? '...' : respuesta;
-            setResultadoPalabras([modPalabra , ...resultadoPalabras])
-        }
-
-        if(resp){
-            setContadores([contadores[0] + 1 ,contadores[1] , contadores[2]+1 , contadores[3]+100])
-        }else{
-            setContadores([contadores[0] + 1 ,contadores[1]+1 , contadores[2] , contadores[3] === 0 ? contadores[3]: contadores[3] - 25 ])
-        }
-
-        setRespuesta('');
+        setResultadoPalabras([PorDefecto])
+        setPalabras([])
+        palabras.length === 0 
+        ? setPalabras(IniciarPartida(partida)) 
+        : router.push('/AdivinaLaPalabra/main')
     }
 
     const pasar = ():void => {
@@ -188,14 +108,14 @@ export default function Juego():JSX.Element{
                         {palabras.length !== 0 && 
                         <div className={`${styles.BoxRespuesta}
                         d-flex flex-column align-items-center`}>
-                           {palabras.length > 0 && <p className={`${styles.palabraJuego} text-center`}>
+                            {palabras.length > 0 && <p className={`${styles.palabraJuego} text-center`}>
                                 {partida.OrdernDeIdioma ?
                                 palabras[0].palabraEnEspañol[0] :
                                 palabras[0].palabraEnIngles[0]}
                             </p>}
                             <input value={respuesta} onChange={e => setRespuesta(e.target.value)}/>
                             <button className={`${styles.botonesRespuesta} mt-4 btn btn-light`} 
-                            onClick={(e) => {e.preventDefault() ; comprobar()}}>Comprobar</button>
+                            onClick={(e) => {e.preventDefault() ; funcionPalabra()}}>Comprobar</button>
                             <button className={`${styles.botonesRespuesta} mt-2 btn btn-danger`} 
                             onClick={(e) => {e.preventDefault() ; pasar()}}>Pasar</button>
                         </div>}

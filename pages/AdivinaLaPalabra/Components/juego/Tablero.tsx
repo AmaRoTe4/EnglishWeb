@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux'
-import { RootState } from '../../../store/store'
-import styles from '../../../styles/HomeWorks.module.css'
+import { RootState } from '../../../../store/store'
+import styles from '../../../../styles/HomeWorks.module.css'
 
 interface Props{
     contadores:number[],
