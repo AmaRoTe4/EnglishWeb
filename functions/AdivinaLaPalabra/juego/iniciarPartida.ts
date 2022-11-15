@@ -1,13 +1,13 @@
 //esto son los json de data
-import Acciones from '../../../../Data/Juego/Acciones.json'
-import Adjetivos from '../../../../Data/Juego/Adjetivos.json'
-import Cosas from '../../../../Data/Juego/Cosas.json'
-import Familia from '../../../../Data/Teoria/Familia.json'
-import Fechas from '../../../../Data/Juego/Fechas.json'
-import Informatica from '../../../../Data/Juego/Informatica.json'
-import Numeros from '../../../../Data/Teoria/Numeros.json'
-import {CuerpoPalabras, Palabras} from '../../../../interfaces'
-import {DataJuego} from '../../../../interfaces'
+import Acciones from '../../../Data/Juego/Acciones.json'
+import Adjetivos from '../../../Data/Juego/Adjetivos.json'
+import Cosas from '../../../Data/Juego/Cosas.json'
+import Familia from '../../../Data/Teoria/Familia.json'
+import Fechas from '../../../Data/Juego/Fechas.json'
+import Informatica from '../../../Data/Juego/Informatica.json'
+import Numeros from '../../../Data/Teoria/Numeros.json'
+import {CuerpoPalabras, Palabras} from '../../../interfaces'
+import {DataJuego} from '../../../interfaces'
 
 export default function IniciarPartida(partida:DataJuego):Palabras[] {
     const response:CuerpoPalabras[] = 

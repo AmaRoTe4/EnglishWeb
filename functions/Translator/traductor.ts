@@ -1,5 +1,5 @@
-import json from '../../../Data/general.json'
-import { CuerpoPalabras } from '../../../interfaces';
+import json from '../../Data/general.json'
+import { CuerpoPalabras } from '../../interfaces';
 
 export const TraduccionIng = (texto:string):string => {
     if(json.length > 0){ 

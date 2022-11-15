@@ -1,7 +1,7 @@
 import styles from '../../../../styles/HomeWorks.module.css'
-import { Palabras } from '../../../../interfaces'
+import { Palabras } from '../../../interfaces'
 import { useSelector } from 'react-redux'
-import { RootState } from '../../../../store/store'
+import { RootState } from '../../../store/store'
 import { Dispatch, SetStateAction } from 'react'
 
 interface Props{

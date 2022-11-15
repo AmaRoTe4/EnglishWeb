@@ -1,4 +1,4 @@
-import { Palabras } from './../../../../interfaces.d';
+import { Palabras } from '../../../interfaces';
 
 export function ComprobarEsp(
     palabras:Palabras[] , 

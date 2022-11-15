@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux'
-import { RootState } from '../../../../store/store'
+import { RootState } from '../../../store/store'
 import styles from '../../../../styles/HomeWorks.module.css'
 
 interface Props{

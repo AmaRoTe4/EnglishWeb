@@ -1,16 +1,16 @@
-import styles from '../../styles/HomeWorks.module.css'
+import styles from '../../../styles/HomeWorks.module.css'
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux'
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { RootState } from '../../store/store'
-import { BarrasLaterales } from './Components/juego/BarrasLaterales'
-import { Tablero } from './Components/juego/Tablero'
-import { BarraFinal } from './Components/juego/BarraDesFinal'
-import { NubeDeResultado } from './Components/juego/NubeDeResultado'
+//import { BarrasLaterales } from './Components/juego/BarrasLaterales'
+//import { Tablero } from './Components/juego/Tablero'
+//import { BarraFinal } from './Components/juego/BarraDesFinal'
+//import { NubeDeResultado } from './Components/juego/NubeDeResultado'
 import { Palabras } from '../../interfaces'
-import IniciarPartida from './functions/juego/iniciarPartida'
-import {ComprobarEsp , ComprobarIng} from './functions/juego/comprobar'
+import IniciarPartida from '../../functions/AdivinaLaPalabra/juego/iniciarPartida'
+import {ComprobarEsp , ComprobarIng} from '../../functions/AdivinaLaPalabra/juego/comprobar'
 
 const PorDefecto:Palabras = 
 {
@@ -94,15 +94,16 @@ export default function Juego():JSX.Element{
 
                         {palabras.length === 0 && <h1>Resultado</h1>}
                         {/* el tablero de la partida */}
-                        <Tablero contadores={contadores} largo={palabras.length} />
+                        {/*<Tablero contadores={contadores} largo={palabras.length} />*/}
                         
                         {/* esta se ejecuta el terminar el juego */}
-                        {palabras.length === 0 && 
+                        {/*{palabras.length === 0 && 
                         <BarraFinal 
                             palabras={resultadoPalabras} 
                             setSeleccionado={setSeleccionado} 
                             funcion={Reiniciar} 
-                        />}
+                        />
+                        }
 
                         {/* este en si es el input de entrdas delas respuests , esta es local*/}
                         {palabras.length !== 0 && 
@@ -133,11 +134,8 @@ export default function Juego():JSX.Element{
                     <div className={`${styles.ConteinerPalabrasExterno}`}>
                         {/* barra lateral de palabras */}
                         <div className={`${styles.ConteinerPalabras}`}>
-                            <BarrasLaterales palabras={palabras} />
-                            <BarrasLaterales 
-                                palabras={resultadoPalabras} 
-                                setSeleccionado={setSeleccionado} 
-                            />
+                            {/*<BarrasLaterales palabras={palabras} />*/}
+                            {/*<BarrasLaterales palabras={resultadoPalabras} setSeleccionado={setSeleccionado} />*/}
                         </div>
                         <div className={`${styles.salida} centradoPorDefecto`}>
                             <Link href={'/AdivinaLaPalabra/main'}>
@@ -150,11 +148,9 @@ export default function Juego():JSX.Element{
                     }
                 </div>
                 {/* esta es la consulta del la palabras */}
-                {seleccionado.id !== 1000 &&
-                <NubeDeResultado 
-                    seleccionado={seleccionado} 
-                    setSeleccionado={setSeleccionado} 
-                />}
+                {/*{seleccionado.id !== 1000 &&
+                <NubeDeResultado seleccionado={seleccionado} setSeleccionado={setSeleccionado} />
+                }*/}
             </div>
     )
 }
