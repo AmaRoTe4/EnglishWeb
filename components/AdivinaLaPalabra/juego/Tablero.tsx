@@ -1,49 +1,56 @@
-import { useSelector } from 'react-redux'
-import { RootState } from '../../../store/store'
-import styles from '../../../../styles/HomeWorks.module.css'
+//import { useSelector } from 'react-redux'
+//import { RootState } from '../../../store/store'
+import styles from '../../../styles/AdiLaPalJuego.module.css'
 
 interface Props{
-    contadores:number[],
-    largo:number
+    puntos:number,
+    restantes:number,
+    correctas:number,
+    incorrectas:number,
 }
 
-export function Tablero({largo , contadores}:Props):JSX.Element{
-    const { partida } = useSelector((state:RootState) => state.juego)
-
+export function Tablero({
+    puntos,
+    restantes,
+    correctas,
+    incorrectas
+}:Props):JSX.Element{
     return (
-        <div className={`${styles.tablero} d-flex justify-content-around align-items-center`}>
-            <div className={`${styles.BoxTitle}`}>
-                <span className="d-flex justify-content-center align-items-end" style={{height:'50%'}}>
-                    <p>Cantidad</p>
-                </span>
-                <span className="d-flex justify-content-center" style={{height:'50%'}}>
-                    <p>{contadores[0]}{largo !== 0 && `/${partida.Cantidad}`}</p>
-                </span>
-            </div>
-            <div className={`${styles.BoxTitle}`}>
-                <span className="d-flex justify-content-center align-items-end" style={{height:'50%'}}>
-                    <p>Puntos</p>
-                </span>
-                <span className="d-flex justify-content-center" style={{height:'50%'}}>
-                    <p>{contadores[3]}</p>
-                </span>
-            </div>
-            <div className={`${styles.BoxTitle}`}>
-                <span className="d-flex justify-content-center align-items-end" style={{height:'50%'}}>
-                    <p>Acertadas</p>
-                </span>
-                <span className="d-flex justify-content-center" style={{height:'50%'}}>
-                    <p>{contadores[2]}</p>
-                </span>
-            </div>
-            <div className={`${styles.BoxTitle}`}>
-                <span className="d-flex justify-content-center align-items-end" style={{height:'50%'}}>
-                    <p>Erradas</p>
-                </span>
-                <span className="d-flex justify-content-center" style={{height:'50%'}}>
-                    <p>{contadores[1]}</p>
-                </span>
-            </div>
-        </div>
+        <nav className={`${styles.boxMenuExterno} centradoPorDefecto`}>
+            <ul className={`${styles.boxMenuIternal} ${styles.ul} row`}>
+                <li className={`${styles.boxItemsMenu} col-12 col-md-3`}>
+                    <span className={`${styles.ItemsMenu}`}>
+                        {puntos}
+                    </span>
+                    <span className={`${styles.ItemsMenu}`}>
+                        Puntos
+                    </span>
+                </li>
+                <li className={`${styles.boxItemsMenu} col-4 col-md-3`}>
+                    <span className={`${styles.ItemsMenu}`}>
+                        {restantes}
+                    </span>
+                    <span className={`${styles.ItemsMenu}`}>
+                        Restantes
+                    </span>
+                </li>
+                <li className={`${styles.boxItemsMenu} col-4 col-md-3`}>
+                    <span className={`${styles.ItemsMenu}`}>
+                        {correctas}
+                    </span>
+                    <span className={`${styles.ItemsMenu}`}>
+                        Correctas
+                    </span>
+                </li>
+                <li className={`${styles.boxItemsMenu} col-4 col-md-3`}>
+                    <span className={`${styles.ItemsMenu}`}>
+                        {incorrectas}
+                    </span>
+                    <span className={`${styles.ItemsMenu}`}>
+                        Incorrectas
+                    </span>
+                </li>
+            </ul>
+        </nav>
     )
 }

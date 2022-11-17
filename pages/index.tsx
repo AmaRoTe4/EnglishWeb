@@ -12,11 +12,11 @@ const Home: NextPage = () => {
   return (
       <div className='d-flex justify-content-center flex-column oneHundred'
         style={{background:' linear-gradient(to top , rgb(70, 179, 211) , rgb(0, 79, 141))'}}>
-        <div className={`${styles.mainTitulo}`}>
+        <nav className={`${styles.mainTitulo}`}>
             <h1 style={{color:'white'}} className="text-center">ENGLISH IN A WEB</h1>
-        </div>
+        </nav>
 
-        <div className={`${styles.contentLiks} BoxLinks centradoColumn`}>
+        <section className={`${styles.contentLiks} BoxLinks centradoColumn`}>
           <div className={`${styles.BoxSupLinks} d-flex`}>
             <div className={`${styles.contentSupLateral} justify-content-start`}>
               <i 
@@ -54,7 +54,7 @@ const Home: NextPage = () => {
               </span>
             </div>
           </div>
-        </div>
+        </section>
       </div>
   )
 }

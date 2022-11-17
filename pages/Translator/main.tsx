@@ -18,7 +18,7 @@ export default function Main(){
             minHeight: "100vh",
             height: "auto"
         }}>
-            <div className={`${styles.BoxTitulo}`}>
+            <nav className={`${styles.BoxTitulo}`}>
                 <div className={`${styles.Titulo}`}>
                     Traductor
                 </div>
@@ -27,14 +27,14 @@ export default function Main(){
                         <i className="fa-solid fa-house"></i>
                     </Link>
                 </div>
-            </div>
-            <div className={`${styles.boxSelecion}`}>
+            </nav>
+            <section className={`${styles.boxSelecion}`}>
                 <Seleccionador 
                     seleccionado={seleccionado} 
                     setSeleccionado={setSeleccionado} 
                 />
-            </div>
-            <div className={`${styles.boxTranslator}`}>
+            </section>
+            <section className={`${styles.boxTranslator}`}>
                 <div className={`${styles.boxTextarea} centradoPorDefecto`}>
                     <textarea
                         className={`${styles.Textarea}`}
@@ -60,7 +60,7 @@ export default function Main(){
                         placeholder={seleccionado !== 0 ? "Ingles" : "Español"}>
                     </textarea>
                 </div>
-            </div>
+            </section>
         </div>
     )
 }

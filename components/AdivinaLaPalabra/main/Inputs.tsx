@@ -1,4 +1,4 @@
-import styles from '../../../styles/AdivinaLaPalabra.module.css'
+import styles from '../../../styles/AdiLaPalMain.module.css'
 import { Dispatch, SetStateAction } from 'react'
 
 interface FormInter {

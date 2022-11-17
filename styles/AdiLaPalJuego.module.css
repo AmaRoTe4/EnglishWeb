@@ -1,0 +1,294 @@
+.ul{
+    padding:0px;
+}
+
+.ul li{
+    list-style:none;
+}
+
+/* menu */
+.boxMenuExterno{
+    width: 100vw;
+    height: 14vh;
+    background-color:rgb(200 200 200)
+}
+.boxMenuIternal{
+    margin:0px;
+    width: 98vw;
+    height: 10vh;
+    background-color:rgb(250 250 250)
+}
+
+.boxItemsMenu{
+    height: 100%;
+    color:black;
+    border:solid 1px black;
+    display:flex;
+    flex-direction:column;
+}
+
+.ItemsMenu{
+    font-size:2.7vh;
+    width:100%;
+    height: 50%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+/* estructura */
+.boxCenter{
+    height:86vh;
+    width:100%;
+    margin:0px;
+}
+
+.boxBarra{
+    height:100%;
+}
+
+.boxInternal{
+    height:100%;
+}
+
+/* centro */
+.boxPalabra{
+    min-height:250px;
+    width:500px;
+}
+
+.Palabra{
+    text-align:center;
+    font-size:50px;
+}
+
+.InputResp{
+    border-radius: 10px;
+    padding:8px;
+    border:solid 2px black;
+    font-size: 20px;
+    width:30%;
+}
+
+.boxBtnResp{
+    height: 100px;
+    width:30%;
+    display: flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.BtnComprobar{
+    background-color: rgb(110, 233, 61);
+}
+.BtnPasar{
+    background-color: rgb(224, 0, 0);
+}
+.BtnResp{
+    border-radius:10px;
+    border:solid 1px black;
+    height:50%;
+    min-width:45%;
+}
+
+/* barra */
+.boxList{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-top:10%;
+    min-height: 80%;
+    height: 80%;
+    border:solid 2px white;
+    padding:0px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.basicElemList{
+    text-align: center;
+    min-height: 10%;
+    border:solid 1px white;
+    background-color: rgb(200 200 200);
+    color:black;
+    list-style: none;
+}
+
+.incorrectElemList{
+    background-color: rgb(211, 0, 0);
+}
+
+.correctElemList{
+    background-color: rgb(0, 211, 0);
+}
+
+.boxBtnVolver{
+    height:10%;
+    width: 100%;
+}
+
+.BtnVolver{
+    border-radius: 7px;
+    border:solid 1px black;
+    width:100%;
+    height:70%;
+    background-color: rgb(230, 0, 0);
+}
+
+/* final */
+.boxFinal{
+    max-height:100vh;
+    height:100vh;
+    width:100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.BoxTableroFinal{
+    margin-top: 10vh;
+    height:30vh;
+    width:70vw;
+    border-radius:15px;
+}
+
+.LiTableroFinal{
+    border:solid 1px black;
+    border-radius:10px;
+    background-color: rgb(27, 180, 27);
+    color:black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.PTableroFinal{
+    text-align: center;
+    font-size: 26px;
+}
+
+.Li100{
+    width:100%;
+    margin:0px;
+    padding:0px;
+    display:flex;
+    justify-content: space-between;
+}
+
+.Li30{
+    margin-top:20px;
+    width:30%;
+}
+
+.PTableroFinalPuntos{
+    width:100%;
+    height:50%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    margin:0px;
+}
+
+.boxChildren{
+    width: 80vh;
+    margin-top: 7vh;
+    height:25vh;
+}
+
+.boxChildren h6{
+    height:10%;
+}
+
+.UlResultado{
+    border:solid 2px black;
+    margin-top:20px;
+    padding:0px;
+    height:90%;
+    width:100%;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+
+.UlResultado li{
+    min-height:50px;
+}
+
+.boxBtnFinal{
+    margin-top: 10vh;
+    display: flex;
+    justify-content:space-between;
+    height:10vh;
+    width:70vh;
+}
+
+.BtnFinal{
+    border:solid 1px black;
+    border-radius:10px;
+    height:100%;
+    width:40%;
+    background-color:rgb(255, 255, 255);
+}
+
+@media (max-width:768px){
+    .boxFinal{
+        overflow:hidden;
+    }
+    .BtnFinal{
+        height:80%;
+        width:20%;
+        margin:0px 20px;
+    }
+    .boxBtnFinal{
+        justify-content:center;
+    }
+    .PTableroFinal{
+        padding:0px;
+        margin:0px;
+        font-size:15px;
+    }
+    .LiTableroFinal{
+        height:80px;
+    }
+    .BoxTableroFinal{
+        height:25vh;
+        width:90vw;
+    }    
+    .boxPalabra{
+        width:100vw;
+    }
+    .BtnVolver{
+        height:40%;
+    }
+    .boxBtnVolver{
+        height:20vh;
+    }
+    .boxList{
+        height:70vh;
+    }
+    .boxBtnResp{
+        margin-top: 30px;
+        width: 80%;
+    }
+    .InputResp{
+        width:80%;
+    }
+    .boxCenter{
+        height:auto;
+    }   
+    .boxItemsMenu{
+        height: 50%;
+        font-size: 2.2vh;
+    }
+    .boxMenuExterno{
+        width: 100vw;
+        height: 20vh;
+    }
+    .boxMenuIternal{
+        width: 92vw;
+        height: 16vh;
+    }
+}
