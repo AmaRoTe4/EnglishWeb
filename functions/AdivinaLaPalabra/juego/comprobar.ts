@@ -1,4 +1,4 @@
-import { Palabras } from '../../../interfaces';
+import { Palabras } from "../../../interfaces";
 
 export const resultado = (orden:boolean , respuesta:string , seleccionado:Palabras):boolean => {
     let respCorrecta:string[] = !orden ? seleccionado.palabraEnEspañol : seleccionado.palabraEnIngles;
@@ -9,5 +9,3 @@ export const resultado = (orden:boolean , respuesta:string , seleccionado:Palabr
 
     return aux.includes(true)
 }
-
-

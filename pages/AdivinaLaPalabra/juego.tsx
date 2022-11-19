@@ -11,6 +11,7 @@ import Barra from '../../components/AdivinaLaPalabra/juego/Barra';
 import {resultado} from '../../functions/AdivinaLaPalabra/juego/comprobar'
 import FinalJuego from '../../components/AdivinaLaPalabra/juego/FinalJuego';
 import Swal from 'sweetalert2';
+import ControlsKeyboard from '../../functions/AdivinaLaPalabra/juego/ControlsKeyboard';
 
 const PorDefecto:Palabras = 
 {
@@ -44,10 +45,9 @@ export default function Juego():JSX.Element{
             setCorrectas(0) 
             setIncorrectas(0) 
             setPuntos(0) 
-
         }
     },[partida, reiniciar, router])
-
+    
     const asignarTablero = (resultado:boolean) => {
         if(resultado){
             setRestantes(n => n-1)
@@ -61,7 +61,7 @@ export default function Juego():JSX.Element{
         setRespuesta("");
     }
 
-    const resolver = (accion:number):void => {
+    const resolver = (accion:number = 1):void => {
         let res:boolean = accion === 1 
         ? resultado(partida.OrdernDeIdioma , respuesta , seleccionado)
         : false;
@@ -80,6 +80,8 @@ export default function Juego():JSX.Element{
         asignarTablero(res);
     }
 
+    ControlsKeyboard(resolver , restantes > -1 ? 'Enter' : "")
+    
     return (
             <div style={{ 
                     minHeight:`100vh`,
@@ -149,7 +151,7 @@ export default function Juego():JSX.Element{
                     incorrectas={incorrectas}
                     setReiniciar={setReiniciar}
                 >
-                    {<ul className={styles.UlResultado}>
+                    <ul className={styles.UlResultado}>
                         {palabras.map((n , i) => 
                             <li key={i} 
                             onClick={e => {e.preventDefault(); Swal.fire({
@@ -169,13 +171,13 @@ export default function Juego():JSX.Element{
                                 ${n.estado === 0 
                                 ? styles.incorrectElemList
                                 : styles.correctElemList}`}
-                        >
-                            {partida.OrdernDeIdioma 
-                            ? n.palabraEnEspañol[0] 
-                            : n.palabraEnIngles[0]}
-                        </li>
+                            >
+                                {partida.OrdernDeIdioma 
+                                ? n.palabraEnEspañol[0] 
+                                : n.palabraEnIngles[0]}
+                            </li>
                         )}
-                    </ul>}
+                    </ul>
                 </FinalJuego>}
             </div>
     )

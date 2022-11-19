@@ -15,42 +15,32 @@ export default function Barra({palabras , orden , invertir}:Props){
     
     return (
         <ul className={`${styles.boxList}`}>
-            {palabras.map((n , i) => (
-                <>
-                    {n.respuesta === "" && 
-                    <li key={i} 
-                        className={`${styles.basicElemList} centradoPorDefecto`}
-                    >
-                        {orden ?
-                        n.palabraEnEspañol[0] :
-                        n.palabraEnIngles[0]}
-                    </li>}
-                    {n.respuesta !== "" && 
-                    <li key={i} 
-                        onClick={e => {e.preventDefault(); Swal.fire({
-                            title: 'Info',
-                            text:"",
-                            html:
-                            `<div className="border">
-                                <p>respuesta: ${n.respuesta}</p>
-                                <p>resp correcta: ${!orden 
-                                ? n.palabraEnEspañol[0] 
-                                : n.palabraEnIngles[0]}</p>
-                            </div>`,
-                            icon: 'info',
-                            confirmButtonText: 'Ok'
-                        })}}
-                        className={`${styles.basicElemList} centradoPorDefecto
-                            ${n.estado === 0 
-                            ? styles.incorrectElemList
-                            : styles.correctElemList}`}
-                    >
-                        {orden ?
-                        n.palabraEnEspañol[0] :
-                        n.palabraEnIngles[0]}
-                    </li>}
-                </>)
-            )}
+            {palabras.map((n , i) => ( 
+                <li
+                    key={i}
+                    onClick={e => {e.preventDefault(); {n.respuesta !== "" && Swal.fire({
+                        title: 'Info',
+                        text:"",
+                        html:
+                        `<div className="border">
+                            <p>respuesta: ${n.respuesta}</p>
+                            <p>resp correcta: ${!orden 
+                            ? n.palabraEnEspañol[0] 
+                            : n.palabraEnIngles[0]}</p>
+                        </div>`,
+                        icon: 'info',
+                        confirmButtonText: 'Ok'
+                    })}}}
+                    className={`${styles.basicElemList} centradoPorDefecto
+                        ${n.respuesta === "" ? "" : n.estado === 0
+                        ? styles.incorrectElemList
+                        : styles.correctElemList}`}
+                >
+                    {orden ?
+                    n.palabraEnEspañol[0] :
+                    n.palabraEnIngles[0]}
+                </li>
+            ))}
         </ul>
     )
 }

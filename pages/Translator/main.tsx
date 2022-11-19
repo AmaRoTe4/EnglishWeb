@@ -9,7 +9,7 @@ export default function Main(){
     const [text , setText] = useState<Array<string>>(['' ,'']);
 
     useEffect(() => {
-        setText(['', ''])
+        setText([text[1] , text[0]])
     }, [seleccionado])
 
     return (
@@ -40,9 +40,9 @@ export default function Main(){
                         className={`${styles.Textarea}`}
                         value={text[0]} 
                         autoComplete="off"
-                        autoFocus={true}
+                        autoFocus={false}
                         onChange={(e) => {e.preventDefault() ; 
-                            seleccionado === 0 
+                            seleccionado === 0 && text.length === 2
                                 ? setText([e.target.value , TraduccionEsp(e.target.value)]) 
                                 : setText([e.target.value , TraduccionIng(e.target.value)])
                             }}
@@ -54,7 +54,7 @@ export default function Main(){
                         className={`${styles.Textarea}`}
                         value={text[1]} 
                         autoComplete="off"
-                        autoFocus={true}
+                        autoFocus={false}
                         disabled={true}
                         style={{opacity: `${text[0] === "" ? .85 : 1}`}}
                         placeholder={seleccionado !== 0 ? "Ingles" : "Español"}>

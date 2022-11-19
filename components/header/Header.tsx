@@ -21,9 +21,6 @@ export default function Header({Title = "Titulo"}:Props):JSX.Element{
                 <title>{Title}</title>
 
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossOrigin="anonymous" referrerPolicy="no-referrer" />
-                {/*<link rel="stylesheet" href="sweetalert2.min.css"></link>*/}
-                {/*<script src="sweetalert2.min.js"></script>*/}
-                {/*<link rel="icon" type="image/png" href='pictures/icon.png' />*/}
             </Head>
             <Script src="main.js" strategy="lazyOnload"></Script>
         </>

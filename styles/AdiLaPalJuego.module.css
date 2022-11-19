@@ -148,17 +148,17 @@
 }
 
 .BoxTableroFinal{
-    margin-top: 10vh;
-    height:30vh;
+    margin-top: 5vh;
+    height:35vh;
     width:70vw;
-    border-radius:15px;
+    border:white 2px solid;
 }
 
 .LiTableroFinal{
-    border:solid 1px black;
-    border-radius:10px;
-    background-color: rgb(27, 180, 27);
-    color:black;
+    margin:auto;
+    height:50%;
+    background-color: rgb(60 60 60);
+    color:white;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -168,19 +168,6 @@
 .PTableroFinal{
     text-align: center;
     font-size: 26px;
-}
-
-.Li100{
-    width:100%;
-    margin:0px;
-    padding:0px;
-    display:flex;
-    justify-content: space-between;
-}
-
-.Li30{
-    margin-top:20px;
-    width:30%;
 }
 
 .PTableroFinalPuntos{

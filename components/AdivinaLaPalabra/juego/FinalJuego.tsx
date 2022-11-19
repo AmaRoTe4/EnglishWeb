@@ -13,8 +13,8 @@ interface Props{
 const FinalJuego:FC<Props> = (props) =>{
     return (
         <div className={styles.boxFinal}>
-            <ul className={`${styles.BoxTableroFinal} ${styles.ul}`}>
-                <li className={`${styles.LiTableroFinal} ${styles.Li100} centradoPorDefecto`}>
+            <ul className={`${styles.BoxTableroFinal} ${styles.ul} row`}>
+                <li className={`${styles.LiTableroFinal} centradoPorDefecto col-12`}>
                     <p className={`${styles.PTableroFinalPuntos}`}>
                         Puntos
                     </p>
@@ -22,32 +22,30 @@ const FinalJuego:FC<Props> = (props) =>{
                         {props.puntos}
                     </p>
                 </li>
-                <ul className={`${styles.Li100} d-flex`}>    
-                    <li className={`${styles.LiTableroFinal} ${styles.Li30}`}>
-                        <p className={`${styles.PTableroFinal} `}>
-                            Palabras Totales
-                        </p>
-                        <p className={`${styles.PTableroFinal} `}>
-                            {props.correctas+props.incorrectas}
-                        </p>
-                    </li>
-                    <li className={`${styles.LiTableroFinal} ${styles.Li30}`}>
-                        <p className={`${styles.PTableroFinal} `}>
-                            Correctas
-                        </p>
-                        <p className={`${styles.PTableroFinal} `}>
-                            {props.correctas}
-                        </p>
-                    </li>
-                    <li className={`${styles.LiTableroFinal} ${styles.Li30}`}>
-                        <p className={`${styles.PTableroFinal} `}>
-                            Incorrectas
-                        </p>
-                        <p className={`${styles.PTableroFinal} `}>
-                            {props.incorrectas}
-                        </p>
-                    </li>
-                </ul>
+                <li className={`${styles.LiTableroFinal} col-4`}>
+                    <p className={`${styles.PTableroFinal} `}>
+                        Palabras Totales
+                    </p>
+                    <p className={`${styles.PTableroFinal} `}>
+                        {props.correctas+props.incorrectas}
+                    </p>
+                </li>
+                <li className={`${styles.LiTableroFinal} col-4`}>
+                    <p className={`${styles.PTableroFinal} `}>
+                        Correctas
+                    </p>
+                    <p className={`${styles.PTableroFinal} `}>
+                        {props.correctas}
+                    </p>
+                </li>
+                <li className={`${styles.LiTableroFinal} col-4`}>
+                    <p className={`${styles.PTableroFinal} `}>
+                        Incorrectas
+                    </p>
+                    <p className={`${styles.PTableroFinal} `}>
+                        {props.incorrectas}
+                    </p>
+                </li>
             </ul>
             <div className={`${styles.boxBtnFinal}`}>
                 <Link href="/AdivinaLaPalabra/main">
