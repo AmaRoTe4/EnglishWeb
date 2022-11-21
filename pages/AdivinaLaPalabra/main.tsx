@@ -4,7 +4,6 @@ import { FormDePalabrasAPd  , FormDePalabrasEspIng , FormDePalabrasTodos} from '
 import { setJuego } from '../../store/slice/juegos/juego'
 import { asignarValor, DataPartida } from '../../functions/AdivinaLaPalabra/main/index'
 import { useDispatch } from 'react-redux'
-import { DataJuego } from '../../interfaces'
 import { useRouter } from 'next/router'
 import Swal from 'sweetalert2'
 import Link from 'next/link'
@@ -25,7 +24,7 @@ export default function Main(){
 	//el primero es todos/cantidad el segundo es Pordefecto/aleatorio
 	const [valores , setValores] = useState<boolean[]>([true , true  ,true])
 	const [tema, setTemas] = useState<string>('Acciones')
-	const [cantidadDePalabras, setCantidadDePalabras] = useState<number>(0)
+	const [cantidadDePalabras, setCantidadDePalabras] = useState<number>(100)
 
 	const InicirJuego = ():void =>{
 		if(!valores[0] && cantidadDePalabras <= 0) {

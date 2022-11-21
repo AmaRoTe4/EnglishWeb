@@ -24,6 +24,7 @@ export default function IniciarPartida(partida:DataJuego):Palabras[] {
     response.map((n , i) => {
         todos.push(i);
     })
+    
     if(!partida.Salida){
         //aleatorio
         for(let i = 0; i < partida.Cantidad ; i++){

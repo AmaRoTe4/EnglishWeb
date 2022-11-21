@@ -48,7 +48,7 @@ FormDePalabrasEspIng({valores , setValores}:FormInter):JSX.Element{
 			<h4 className={`text-center`}>Traduccion</h4>
 		</div>
         <div className={`${styles.boxInputs} centradoPorDefecto`}>
-          <label className={`${styles.label} text-center`}>Español - Ingles</label>
+          <label className={`${styles.label} text-center`} style={{width:150}}>Español - Ingles</label>
           <input
             checked={valores[2]} 
             id="PorDef" 
@@ -60,7 +60,7 @@ FormDePalabrasEspIng({valores , setValores}:FormInter):JSX.Element{
 		</div>
 		<div className={`${styles.boxInputs} centradoPorDefecto`}
 			style={{borderBottom:'solid 1px black'}}>
-		<label className={`${styles.label} text-center`}>Ingles - Español</label>
+		<label className={`${styles.label} text-center`} style={{width:150}}>Ingles - Español</label>
           <input 
               checked={!valores[2]} 
               id="Alea" name="btnSalida" type="radio"
@@ -105,7 +105,7 @@ FormDePalabrasTodos({valores , setValores , setCantidadDePalabras , cantidadDePa
 			<input type='number' disabled={valores[0]} value={cantidadDePalabras}  
 				style={{border: 'none' , width: '50px' , marginLeft:'15px'}} 
 				onChange={e => {setCantidadDePalabras !== undefined ? setCantidadDePalabras(parseInt(e.target.value)) : ''}}
-				min={0}
+				min={1}
 			/>
         </div>
       </form>
